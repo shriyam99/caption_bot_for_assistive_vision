@@ -13,14 +13,13 @@ const FileItem = ({ file, deleteFile }) => {
                 <p>{file.name}</p>
                 <div className="actions">
                     <div className="loading"></div>
-                    {file.isUploading && <FontAwesomeIcon
-                        icon={faSpinner} className="fa-spin"
-                        onClick={() => deleteFile(file.name)} />
-                    }
-                    {!file.isUploading &&
+                    {file.isUploading ? (
+                        <FontAwesomeIcon
+                        icon={faSpinner} className="fa-spin" />
+                    ) : (
                         <FontAwesomeIcon icon={faTrash}
-                            onClick={() => deleteFile(file.name)} />
-                    }
+                        onClick={() => deleteFile(file.name)} />
+                    )}
                 </div>
             </li>
         </>

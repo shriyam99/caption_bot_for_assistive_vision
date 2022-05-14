@@ -24,7 +24,6 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
                 setFiles([...files, file])
             })
             .catch((err) => {
-                // inform the user
                 console.error(err)
                 removeFile(file.name)
             });
@@ -37,15 +36,13 @@ const FileUpload = ({ files, setFiles, removeFile }) => {
                 <div className="file-inputs">
                     <input type="file" onChange={uploadHandler} />
                     <button>
-                        <i>
-                            <FontAwesomeIcon icon={faPlus} />
-                        </i>
-                        Upload
+                        <i><FontAwesomeIcon icon={faPlus} /></i>
+                        Upload Image
                     </button>
                 </div>
 
                 <p className="main">Supported files</p>
-                <p className="info">PDF, JPG, PNG</p>
+                <p className="info">JPG, PNG</p>
 
             </div>
         </>
