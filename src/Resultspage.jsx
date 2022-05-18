@@ -23,10 +23,10 @@ const ResultsPage = ({res}) => {
                 res.map((item, index) => {
                     return <div className="results-page-item" key={index}>
                         <div className="row">
-                            <p>{item.result}</p>
+                            <p>{item}</p>
                             <div className="play" onClick={async ()=>{
                                     await cancel();
-                                    speak({text: item.result})
+                                    speak({text: item})
                                 }}>
                                 <FontAwesomeIcon icon={faPlay} />
                             </div>
